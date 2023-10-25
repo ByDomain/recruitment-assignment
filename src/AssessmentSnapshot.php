@@ -10,6 +10,7 @@ final class AssessmentSnapshot
         public readonly AssessmentId $assessmentId,
         public readonly \DateTimeImmutable $issuedAt,
         public readonly \DateTimeImmutable $expireAt,
+        public readonly bool $isActive,
     ) {
     }
 }

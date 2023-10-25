@@ -11,7 +11,7 @@ use Assessment\Control\Accept;
 use Assessment\Control\Reject;
 use Munus\Control\Either;
 
-final class SupervisorHasAcriveContractWithClient implements IssueAssessmentPolicy
+final class SupervisorHasActiveContractWithClient implements IssueAssessmentPolicy
 {
     public function __construct(public readonly array $activeContracts)
     {

@@ -8,7 +8,7 @@ use Assessment\Assessment;
 use Assessment\AssessmentCycle;
 use Assessment\AssessmentCycle\IssueAssessment\IssueAssessmentProcess;
 use Assessment\AssessmentCycle\IssueAssessment\Policy\AssessmentTimeLimitPreserved;
-use Assessment\AssessmentCycle\IssueAssessment\Policy\SupervisorHasAcriveContractWithClient;
+use Assessment\AssessmentCycle\IssueAssessment\Policy\SupervisorHasActiveContractWithClient;
 use Assessment\AssessmentCycle\IssueAssessment\Policy\SupervisorHasAuthorityForStandard;
 use Assessment\AssessmentCycleId;
 use Assessment\AssessmentCycleSnapshot;
@@ -33,7 +33,7 @@ final class IssueAssessmentTest extends TestCase
             containerOrAvailableServices: [
                 new IssueAssessmentProcess(GenericList::of(
                     new AssessmentTimeLimitPreserved([]),
-                    new SupervisorHasAcriveContractWithClient([1 => [1]]),
+                    new SupervisorHasActiveContractWithClient([1 => [1]]),
                     new SupervisorHasAuthorityForStandard([1 => ['standard']]),
                 ))
             ]
@@ -158,7 +158,7 @@ final class IssueAssessmentTest extends TestCase
         $ecotone = EcotoneLite::bootstrapFlowTesting(
             classesToResolve: [AssessmentCycle::class],
             containerOrAvailableServices: [
-                new IssueAssessmentProcess(GenericList::of(new SupervisorHasAcriveContractWithClient($activeContracts)))
+                new IssueAssessmentProcess(GenericList::of(new SupervisorHasActiveContractWithClient($activeContracts)))
             ]
         );
 
